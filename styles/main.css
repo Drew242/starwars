@@ -50,6 +50,16 @@ body {
   padding: 5%;
 }
 
+.btnLink {
+  text-decoration: none;
+  color: yellow;
+}
+
+.btnLink:hover {
+  text-decoration: none;
+  color: yellow;
+}
+
 .bannerChar {
   background: url('/images/starWarsBanner.jpg') no-repeat;
   background-size: contain;
@@ -73,9 +83,18 @@ body {
 
 .galaxyDisplay {
   background-color: rgba(255, 255, 255, 0.6);
-  margin: 1%; 
+  margin: 1%;
 }
 
 .galaxyHeader {
   color: yellow
+}
+
+.adviceYoda {
+  margin-top: 10%;
+  text-align: center;
+}
+
+#adviceYoda {
+  color: yellow;
 }

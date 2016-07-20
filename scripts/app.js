@@ -38,7 +38,7 @@ function inputFactory($http) {
         }
     };
 
-    return starWarsData;
+    return starWarsData
 }
 
 // Input Controller //
@@ -59,29 +59,35 @@ function inputController(InputFactory) {
     ic.planet   = '';
     ic.starship = '';
 
-    ic.ajaxCall = function(URL) {
+    ic.ajaxCall = function(URL, prop) {
             inputFact.getData(URL).then(function (response) {
-            ic.appData = response;
-            console.log('response is: ' + response);
-            // this should be the entire string of each object type that's
-            // called based upon the user inputs
-            // now we need a function to sift through to find the object itself
-            // by name of user input and isolate that object, and push into a master
-            // array for building and showing the view
+            inputFact[prop] = response.data.results;
+            console.log('help', response.data);
         })
     };
-    inputFact.species = ic.ajaxCall('http://swapi.co/api/species/');
-    inputFact.planet = ic.ajaxCall('http://swapi.co/api/planets/');
-    inputFact.starship = ic.ajaxCall('http://swapi.co/api/starships');
+    ic.ajaxCall('http://swapi.co/api/species/', 'species');
+    ic.ajaxCall('http://swapi.co/api/planets/', 'planets');
+    ic.ajaxCall('http://swapi.co/api/starships', 'starships');
 
     inputFact.inputSearch = function(userInput, type) {
         switch(userInput) {
             case 'planet':
-
         }
     }
 
-    ic.go = function(e) {
-      console.log(e)
+    ic.go = function() {
+      console.log(inputFact.species);
+      // species info //
+      ic.class = inputFact.species[0].classification;
+      ic.life  = inputFact.species[0].average_lifespan;
+      ic.lang  = inputFact.species[0].language;
+      // planet info //
+      ic.climate = inputFact.planets[0].climate;
+      ic.gravity = inputFact.planets[0].gravity;
+      ic.terrain = inputFact.planets[0].terrain;
+      // starship info //
+      ic.shipClass  = inputFact.starships[0].starship_class;
+      ic.shipLength = inputFact.starships[0].length;
+      ic.shipCrew   = inputFact.starships[0].crew;
     }
 }
