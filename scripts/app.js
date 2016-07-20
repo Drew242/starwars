@@ -4,13 +4,16 @@ angular.module('starWars', ['ngRoute']);
 
 angular.module('starWars').config(function($routeProvider) {
     $routeProvider.when( '/', {
-      templateUrl: 'main.html'
+      templateUrl: 'views/main.html'
     });
     $routeProvider.when( '/createCharacter', {
-      templateUrl: 'createCharacter.html'
+      templateUrl: 'views/createCharacter.html'
     })
     $routeProvider.when( '/yodaAdvice', {
-      templateUrl: 'yodaAdvice.html'
+      templateUrl: 'views/yodaAdvice.html'
+    })
+    $routeProvider.when( '/leaveGalaxy', {
+      templateUrl: 'views/leaveGalaxy.html'
     })
 
     // default route //

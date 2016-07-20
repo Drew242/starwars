@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'StarWars';
-  src: url('STARWARS.ttf');
+  src: url('fonts/STARWARS.ttf');
 }
 
 body {
-  background: url('starSky.jpg');
+  background: url('images/starSky.jpg');
   font-family: StarWars;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 .bannerChar {
-  background: url('starWarsBanner.jpg') no-repeat;
+  background: url('images/starWarsBanner.jpg') no-repeat;
   background-size: contain;
   min-height: 40em;
   height: 100%;
@@ -67,6 +67,6 @@ body {
 }
 
 .wiseOne {
-  background: url('yoda.png') no-repeat right;
+  background: url('images/yoda.png') no-repeat right;
   min-height: 30em;
 }
