@@ -51,10 +51,13 @@ angular.module('starWars')
 
 // Declare controller function //
 
-function inputController(InputFactory, $location) {
+function inputController(InputFactory) {
     console.log('Controller functional, human.');
     var ic = this;
     var inputFact = InputFactory;
+    ic.species  = '';
+    ic.planet   = '';
+    ic.starship = '';
 
     ic.ajaxCall = function(URL) {
             inputFact.getData(URL).then(function (response) {
@@ -78,8 +81,7 @@ function inputController(InputFactory, $location) {
         }
     }
 
-    ic.visitCharacter = function() {
-      console.log('wtf');
-      $location.url('#/createCharacter');
+    ic.go = function(e) {
+      console.log(e)
     }
 }
