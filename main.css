@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'StarWars';
+  src: url('STARWARS.ttf');
+}
+
+body {
+  background: url('starSky.jpg');
+  font-family: StarWars;
+}
+
+.landing {
+  min-height: 40em;
+  height: 100%;
+  width: 100%;
+}
+
+.landingContainer {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.landingBtn {
+  border: 2px solid #000000;
+  background-color: transparent;
+  color: yellow;
+  padding: 3%;
+  font-size: 3.5em;
+}
+
+.landingBtn:hover {
+  border: none;
+  background: #000000;
+  color: yellow;
+}
+
+.landingBtn:active, .landingBtn:visited {
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+.bannerChar {
+  background: url('starWarsBanner.jpg');
+  background-size: contain;
+  min-height: 40em;
+  height: 100%;
+}
