@@ -51,7 +51,7 @@ body {
 }
 
 .bannerChar {
-  background: url('starWarsBanner.jpg');
+  background: url('starWarsBanner.jpg') no-repeat;
   background-size: contain;
   min-height: 40em;
   height: 100%;
@@ -61,6 +61,7 @@ body {
 .createCharacter {
   text-align: center;
   margin-top: 5%;
+  margin-bottom: 15%;
   font-size: 2em;
   color: yellow;
 }
