@@ -51,14 +51,14 @@ angular.module('starWars')
 
 // Declare controller function //
 
-function inputController(InputFactory) {
+function inputController(InputFactory, $location) {
     console.log('Controller functional, human.');
-    var inputCont = this;
+    var ic = this;
     var inputFact = InputFactory;
 
-    inputCont.ajaxCall = function(URL) {
+    ic.ajaxCall = function(URL) {
             inputFact.getData(URL).then(function (response) {
-            inputCont.appData = response;
+            ic.appData = response;
             console.log('response is: ' + response);
             // this should be the entire string of each object type that's
             // called based upon the user inputs
@@ -67,14 +67,19 @@ function inputController(InputFactory) {
             // array for building and showing the view
         })
     };
-    inputFact.species = inputCont.ajaxCall('http://swapi.co/api/species/');
-    inputFact.planet = inputCont.ajaxCall('http://swapi.co/api/planets/');
-    inputFact.starship = inputCont.ajaxCall('http://swapi.co/api/starships');
+    inputFact.species = ic.ajaxCall('http://swapi.co/api/species/');
+    inputFact.planet = ic.ajaxCall('http://swapi.co/api/planets/');
+    inputFact.starship = ic.ajaxCall('http://swapi.co/api/starships');
 
     inputFact.inputSearch = function(userInput, type) {
         switch(userInput) {
             case 'planet':
 
         }
+    }
+
+    ic.visitCharacter = function() {
+      console.log('wtf');
+      $location.url('#/createCharacter');
     }
 }
