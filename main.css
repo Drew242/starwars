@@ -39,9 +39,33 @@ body {
   color: white;
 }
 
+#landingBtn {
+  border: none;
+  background-color: transparent;
+}
+
+#landingBtn:hover {
+  background-color: black;
+  color: white;
+  padding: 5%;
+}
+
 .bannerChar {
   background: url('starWarsBanner.jpg');
   background-size: contain;
   min-height: 40em;
   height: 100%;
+  margin-left: 5%;
+}
+
+.createCharacter {
+  text-align: center;
+  margin-top: 5%;
+  font-size: 2em;
+  color: yellow;
+}
+
+.wiseOne {
+  background: url('yoda.png') no-repeat right;
+  min-height: 30em;
 }
