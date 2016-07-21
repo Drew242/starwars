@@ -55,9 +55,9 @@ function inputController(InputFactory) {
     console.log('Controller functional, human.');
     var ic = this;
     var inputFact = InputFactory;
-    ic.species  = '';
-    ic.planet   = '';
-    ic.starship = '';
+    ic.speciesValue = '';
+    ic.planet       = '';
+    ic.starship     = '';
 
     ic.ajaxCall = function(URL, prop) {
             inputFact.getData(URL).then(function (response) {
@@ -76,18 +76,21 @@ function inputController(InputFactory) {
     }
 
     ic.go = function() {
-      console.log(inputFact.species);
+      var speciesId = $("#species").children(":selected").attr("id");
+      var planetId = $("#species").children(":selected").attr("id");
+      var starshipId = $("#species").children(":selected").attr("id");
+
       // species info //
-      ic.class = inputFact.species[0].classification;
-      ic.life  = inputFact.species[0].average_lifespan;
-      ic.lang  = inputFact.species[0].language;
+      ic.class = inputFact.species[speciesId].classification;
+      ic.life  = inputFact.species[speciesId].average_lifespan;
+      ic.lang  = inputFact.species[speciesId].language;
       // planet info //
-      ic.climate = inputFact.planets[0].climate;
-      ic.gravity = inputFact.planets[0].gravity;
-      ic.terrain = inputFact.planets[0].terrain;
+      ic.climate = inputFact.planets[planetId].climate;
+      ic.gravity = inputFact.planets[planetId].gravity;
+      ic.terrain = inputFact.planets[planetId].terrain;
       // starship info //
-      ic.shipClass  = inputFact.starships[0].starship_class;
-      ic.shipLength = inputFact.starships[0].length;
-      ic.shipCrew   = inputFact.starships[0].crew;
+      ic.shipClass  = inputFact.starships[starshipId].starship_class;
+      ic.shipLength = inputFact.starships[starshipId].length;
+      ic.shipCrew   = inputFact.starships[starshipId].crew;
     }
 }
